@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace NotificacionesPush
 {
@@ -13,7 +8,8 @@ namespace NotificacionesPush
         {
             InitializeComponent();
 
-            MainPage = new NotificacionesPush.MainPage();
+            // The root page of your application
+            MainPage = new TodoList();
         }
 
         protected override void OnStart()

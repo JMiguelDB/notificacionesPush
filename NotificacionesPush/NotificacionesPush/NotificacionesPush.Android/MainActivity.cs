@@ -1,11 +1,7 @@
-﻿using System;
-
-using Android.App;
+﻿using Android.App;
 using Android.Content.PM;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Android.OS;
+using Microsoft.WindowsAzure.MobileServices;
 
 namespace NotificacionesPush.Droid
 {
@@ -14,12 +10,13 @@ namespace NotificacionesPush.Droid
     {
         protected override void OnCreate(Bundle bundle)
         {
-            TabLayoutResource = Resource.Layout.Tabbar;
-            ToolbarResource = Resource.Layout.Toolbar;
-
             base.OnCreate(bundle);
 
+            // Initialize Azure Mobile Apps
+            CurrentPlatform.Init();
+            // Initialize Xamarin Forms
             global::Xamarin.Forms.Forms.Init(this, bundle);
+            // Load the main application
             LoadApplication(new App());
         }
     }
